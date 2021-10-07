@@ -5,6 +5,7 @@
  */
 package Formularios;
 
+import Clases.MTCForm;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +22,7 @@ public class InitialForm extends javax.swing.JFrame {
         //ingresarElementos();
         
         setnDatos(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidaad de datos")));
+        
     }
 
     /**
@@ -61,6 +63,11 @@ public class InitialForm extends javax.swing.JFrame {
         jPanel1.add(jButton2);
 
         jButton3.setText("Medidas de Tendencia Central");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
 
         jButton4.setText("Medidas de DIspersión");
@@ -107,10 +114,13 @@ public class InitialForm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
         System.out.println("nDatos = " + this.nDatos);
-        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        MTCForm mtcForm = new MTCForm(this.nDatos);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
     
