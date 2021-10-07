@@ -5,6 +5,7 @@
  */
 package Formularios;
 
+import Clases.MDClass;
 import Clases.MTCClass;
 import javax.swing.JOptionPane;
 
@@ -73,6 +74,11 @@ public class InitialForm extends javax.swing.JFrame {
         jPanel1.add(jButton3);
 
         jButton4.setText("Medidas de DIspersión");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4);
         jPanel1.add(jLabel1);
 
@@ -125,6 +131,11 @@ public class InitialForm extends javax.swing.JFrame {
         //mtcForm = new MTCClass(this.nDatos);
         new MTCForm(this.nDatos).setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        new MDClass(this.nDatos);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     
     

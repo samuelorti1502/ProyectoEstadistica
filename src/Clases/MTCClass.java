@@ -1,3 +1,4 @@
+//Clase para las medidas de tendencia central
 package Clases;
 
 import java.util.Arrays;
@@ -12,13 +13,13 @@ import javax.swing.JOptionPane;
  */
 public class MTCClass {
 
-    private int[] Datos;
+    private int[] datos;
     private int nDatos;
     private double suma;
 
     public MTCClass(int nDatos) {
         this.nDatos = nDatos;
-        Datos = new int[nDatos];
+        datos = new int[nDatos];
         IngresoDatos();
         //imprimirDatos();
         /*System.out.println("media = " + media());
@@ -28,17 +29,17 @@ public class MTCClass {
 
     public double IngresoDatos() {
         for (int i = 0; i < this.nDatos; i++) {
-            this.Datos[i] = (Integer.parseInt(JOptionPane.showInputDialog((i + 1) + ". Ingrese el numero deseado: ")));
+            this.datos[i] = (Integer.parseInt(JOptionPane.showInputDialog((i + 1) + ". Ingrese el numero deseado: ")));
             suma += this.getDatos()[i];
         }
         return suma;
     }
 
     public void imprimirDatos(DefaultListModel model, JList lista) {
-        for (int i = 0; i < this.Datos.length; i++) {
-            model.addElement(Datos[i]);
+        for (int i = 0; i < this.datos.length; i++) {
+            model.addElement(datos[i]);
             lista.setModel(model);
-            System.out.println(Datos[i]);
+            System.out.println(datos[i]);
         }
     }
 
@@ -80,7 +81,7 @@ public class MTCClass {
     }
 
     public int[] getDatos() {
-        return Datos;
+        return datos;
     }
 
 }
