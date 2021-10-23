@@ -5,6 +5,7 @@
  */
 package Clases;
 
+import java.text.DecimalFormat;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -62,19 +63,44 @@ public class PSClass {
 
         return sb.toString();
     }
+    
+    public String formato(double dato1, double dato2){
+        DecimalFormat decFormat = new DecimalFormat("#%");
+        
+        return decFormat.format(dato1/dato2);
+    }
 
-    public void eventos() {
-        
-        double evento = 0;
-        
-        for (int i = 0; i < COLORES; i++) {
-            switch(i)
-            {
-                case 0: evento = (this.datos[0] / suma);
+    public String eventos(int evento) {
+        String eventos = null;
+        double ev;
+
+        switch (evento) {
+            case 0:
+                eventos = formato(this.datos[0], suma);
                 break;
-            }
+            case 1:
+                eventos = formato(this.datos[1], suma);
+                break;
+            case 2:
+                eventos = formato(this.datos[2], suma);
+                break;
+            case 3:
+                ev = this.datos[1] + this.datos[2];
+                eventos = formato(ev , suma);
+                break;
+            case 4:
+                ev = this.datos[0] + this.datos[2];
+                eventos = formato(ev , suma);
+                break;
+            case 5:
+                ev = this.datos[0] + this.datos[1];
+                eventos = formato(ev , suma);
+                break;
+    
         }
-        System.out.println("evento = " + evento);
+
+        System.out.println("evento = " + eventos);
+        return eventos;
     }
 
 }
